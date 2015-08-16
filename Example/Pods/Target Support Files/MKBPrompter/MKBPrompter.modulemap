@@ -1,0 +1,6 @@
+framework module MKBPrompter {
+  umbrella header "MKBPrompter-umbrella.h"
+
+  export *
+  module * { export * }
+}

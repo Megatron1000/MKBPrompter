@@ -1,0 +1,14 @@
+PODS:
+  - MKBPrompter (0.1.0)
+
+DEPENDENCIES:
+  - MKBPrompter (from `../`)
+
+EXTERNAL SOURCES:
+  MKBPrompter:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MKBPrompter: 99602b6a113477c01655332a475ec7038c097dfe
+
+COCOAPODS: 0.38.2
