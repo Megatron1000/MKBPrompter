@@ -13,7 +13,6 @@
 		AA9CF34AF70D1C4198F8D25F8D9FAEC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D90A001447390BC55F8031E6F28510 /* Foundation.framework */; };
 		AB3AA1B11B8150BF00928D76 /* MKBPrompter.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3AA1AF1B8150BF00928D76 /* MKBPrompter.h */; };
 		AB3AA1B21B8150BF00928D76 /* MKBPrompter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA1B01B8150BF00928D76 /* MKBPrompter.m */; };
-		AB5CBB791B820BA600442A5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB5CBB7B1B820BA600442A5A /* Localizable.strings */; };
 		B2459DB841F923A0896F931CDDBE64A0 /* Pods-MKBPrompter_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB84B393AC1A580646EB47FB8AEBD839 /* Pods-MKBPrompter_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F277927DF4E211911ECE3048FB9EADD7 /* MKBPrompter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 110AB5B9249C1B4536D5E30B2D090C83 /* MKBPrompter.bundle */; };
 		F530BAFD3ECD5D83B104C862F6608CDB /* MKBPrompter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A5F3A381A53E9D15A7317BDBEE1205 /* MKBPrompter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,13 +52,6 @@
 		A3A5F3A381A53E9D15A7317BDBEE1205 /* MKBPrompter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKBPrompter-umbrella.h"; sourceTree = "<group>"; };
 		AB3AA1AF1B8150BF00928D76 /* MKBPrompter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKBPrompter.h; sourceTree = "<group>"; };
 		AB3AA1B01B8150BF00928D76 /* MKBPrompter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKBPrompter.m; sourceTree = "<group>"; };
-		AB5CBB7A1B820BA600442A5A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AB5CBB7C1B820BB400442A5A /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AB5CBB7D1B820BBA00442A5A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		AB5CBB7E1B820BC400442A5A /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AB5CBB7F1B820BCF00442A5A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AB5CBB801B820BE200442A5A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		AB5CBB811B820BEA00442A5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B1F0B00339B66F88C9BBBB2B6405F2DB /* MKBPrompter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKBPrompter-prefix.pch"; sourceTree = "<group>"; };
 		B4A6BEFE5EDB663136B5F738BFD2816C /* Pods-MKBPrompter_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MKBPrompter_Tests-resources.sh"; sourceTree = "<group>"; };
 		B4AC61A894436A9DB443700C1BAE35F0 /* MKBPrompter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MKBPrompter.modulemap; sourceTree = "<group>"; };
@@ -150,7 +142,6 @@
 		5DFEF7C0C76C9A5D46FA4D339FEA3F2E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB5CBB7B1B820BA600442A5A /* Localizable.strings */,
 				CE43C756F82A6D56599ABAC104BBB4BD /* Info.plist */,
 				B4AC61A894436A9DB443700C1BAE35F0 /* MKBPrompter.modulemap */,
 				16897852E3B0D4215CA493CFC87AFDA0 /* MKBPrompter.xcconfig */,
@@ -303,12 +294,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				fr,
-				"zh-Hans",
-				de,
-				ja,
-				ko,
-				ru,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
 			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
@@ -335,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F277927DF4E211911ECE3048FB9EADD7 /* MKBPrompter.bundle in Resources */,
-				AB5CBB791B820BA600442A5A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,23 +366,6 @@
 			targetProxy = 8AA0B0A8FCB56A29493A1B6D622B5E16 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AB5CBB7B1B820BA600442A5A /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AB5CBB7A1B820BA600442A5A /* en */,
-				AB5CBB7C1B820BB400442A5A /* fr */,
-				AB5CBB7D1B820BBA00442A5A /* zh-Hans */,
-				AB5CBB7E1B820BC400442A5A /* de */,
-				AB5CBB7F1B820BCF00442A5A /* ja */,
-				AB5CBB801B820BE200442A5A /* ko */,
-				AB5CBB811B820BEA00442A5A /* ru */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		03CA91998D6773EC5D02B3DB87B8353E /* Release */ = {

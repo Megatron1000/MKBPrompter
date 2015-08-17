@@ -24,7 +24,8 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'MKBPrompter' => ['Pod/Assets/*.png']
+    'MKBPrompter' => ['Pod/Assets/*.png'],
+    'MKBPrompter' => ['Pod/*.lproj']
   }
   s.social_media_url = "https://twitter.com/markbridgesapps"
 
