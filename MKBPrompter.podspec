@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "Mark Bridges" => "support@mark-bridges.com" }
   s.source           = { :git => "https://github.com/Megatron1000/MKBPrompter.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/markbridgesapps'
 
   s.platform     = :ios, '8.0'
   s.source_files = 'MKBPrompter/MKBPrompter.{h,m}'
