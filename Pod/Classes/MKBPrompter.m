@@ -19,6 +19,7 @@ static NSString *companyLinkFormat = @"itms-apps://itunes.com/apps/%@";
 @interface MKBPrompter ()
 
 @property (nonatomic, strong) NSUserDefaults *userDefaults;
+@property (nonatomic, strong) NSBundle *bundle;
 
 @end
 
@@ -34,6 +35,19 @@ static NSString *companyLinkFormat = @"itms-apps://itunes.com/apps/%@";
         _otherAppsPromptInterval = otherAppsInterval;
     }
     return self;
+}
+
+- (NSBundle*)bundle
+{
+    if (_bundle == nil)
+    {
+        NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"MKBPrompter" withExtension:@"bundle"];
+        NSAssert(bundleURL, @"Unabled to find bundle from URL");
+        _bundle = [NSBundle bundleWithURL:bundleURL];
+        NSAssert(_bundle, @"Unable to load bundle with URL %@", bundleURL);
+    }
+    
+    return _bundle;
 }
 
 - (NSUserDefaults*)userDefaults
@@ -76,19 +90,19 @@ static NSString *companyLinkFormat = @"itms-apps://itunes.com/apps/%@";
 
 - (UIAlertController*)rateAppAlertController
 {
-	UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Rate App", @"Review app in the app store")
-                                                                             message:NSLocalizedString(@"Please leave a review so we can make this app even better", nil)
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedStringFromTableInBundle(@"Rate App", nil, self.bundle, @"Review app in the app store")
+                                                                             message:NSLocalizedStringFromTableInBundle(@"Please leave a review so we can make this app even better", nil, self.bundle, nil)
                                                                        preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Remind Me Later", @"remind me to review app later")
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedStringFromTableInBundle(@"Remind Me Later", nil, self.bundle, @"remind me to review app later")
                                                         style:UIAlertActionStyleCancel
                                                       handler:nil]];
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Rate Now", @"go and rate this app in the app store")
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedStringFromTableInBundle(@"Rate Now", nil, self.bundle, @"go and rate this app in the app store")
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction *action) {
                                                           [[UIApplication sharedApplication] openURL:[self reviewAppLink]];
                                                           [self.userDefaults setBool:TRUE forKey:mkbKeyStopRatePrompting];
                                                       }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Don't Ask Me Again", nil)
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedStringFromTableInBundle(@"Don't Ask Me Again", nil, self.bundle, nil)
                                                         style:UIAlertActionStyleDestructive
                                                       handler:^(UIAlertAction *action) {
                                                           [self.userDefaults setBool:TRUE forKey:mkbKeyStopRatePrompting];
@@ -98,19 +112,19 @@ static NSString *companyLinkFormat = @"itms-apps://itunes.com/apps/%@";
 
 - (UIAlertController*)showOtherAppsAlertController
 {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"See More Apps", @"have a look at more of my apps")
-                                                                             message:NSLocalizedString(@"Please take a look at my other apps", nil)
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedStringFromTableInBundle(@"See More Apps", nil, self.bundle, @"have a look at more of my apps")
+                                                                             message:NSLocalizedStringFromTableInBundle(@"Please take a look at my other apps", nil, self.bundle, nil)
                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Remind Me Later", @"remind me to review app later")
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedStringFromTableInBundle(@"Remind Me Later", nil, self.bundle, @"remind me to review app later")
                                                         style:UIAlertActionStyleCancel
                                                       handler:nil]];
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Look Now", @"Go to app store now")
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedStringFromTableInBundle(@"Look Now", nil, self.bundle, @"Go to app store now")
                                                         style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction *action) {
                                                           [[UIApplication sharedApplication] openURL:[self moreAppsLink]];
                                                           [self.userDefaults setBool:TRUE forKey:mkbKeyStopOtherAppPrompting];
                                                       }]];
-    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Don't Ask Me Again", nil)
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedStringFromTableInBundle(@"Don't Ask Me Again", nil, self.bundle, nil)
                                                         style:UIAlertActionStyleDestructive
                                                       handler:^(UIAlertAction *action) {
                                                           [self.userDefaults setBool:TRUE forKey:mkbKeyStopOtherAppPrompting];
