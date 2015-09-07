@@ -16,6 +16,9 @@
 @property (nonatomic, readwrite) NSInteger rateCurrentAppPromptInterval;
 @property (nonatomic, readwrite) NSInteger otherAppsPromptInterval;
 
+@property (nonatomic, readwrite) NSString *customRateThisAppMessage;
+@property (nonatomic, readwrite) NSInteger *customViewOtherAppsMessage;
+
 - (instancetype)initWithAppID:(NSString*)appID companyName:(NSString*)companyName withRateCurrentAppPromptInterval:(NSInteger)rateCurrentInterval andOtherAppsPromptInterval:(NSInteger)otherAppsInterval;
 - (BOOL)showPrompterIfScheduledInViewController:(UIViewController*)viewController;
 
