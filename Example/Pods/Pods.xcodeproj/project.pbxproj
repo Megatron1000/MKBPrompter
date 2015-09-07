@@ -14,6 +14,7 @@
 		AB3AA1B11B8150BF00928D76 /* MKBPrompter.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3AA1AF1B8150BF00928D76 /* MKBPrompter.h */; };
 		AB3AA1B21B8150BF00928D76 /* MKBPrompter.m in Sources */ = {isa = PBXBuildFile; fileRef = AB3AA1B01B8150BF00928D76 /* MKBPrompter.m */; };
 		AB5CBB791B820BA600442A5A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB5CBB7B1B820BA600442A5A /* Localizable.strings */; };
+		ABCEF0781B9E2DB700FAC8D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABCEF07A1B9E2DB700FAC8D3 /* Localizable.strings */; };
 		B2459DB841F923A0896F931CDDBE64A0 /* Pods-MKBPrompter_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EB84B393AC1A580646EB47FB8AEBD839 /* Pods-MKBPrompter_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F277927DF4E211911ECE3048FB9EADD7 /* MKBPrompter.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 110AB5B9249C1B4536D5E30B2D090C83 /* MKBPrompter.bundle */; };
 		F530BAFD3ECD5D83B104C862F6608CDB /* MKBPrompter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3A5F3A381A53E9D15A7317BDBEE1205 /* MKBPrompter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,6 +61,13 @@
 		AB5CBB7F1B820BCF00442A5A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB5CBB801B820BE200442A5A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB5CBB811B820BEA00442A5A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABCEF0791B9E2DB700FAC8D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABCEF07B1B9E2DB800FAC8D3 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABCEF07C1B9E2DBA00FAC8D3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		ABCEF07D1B9E2DBB00FAC8D3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABCEF07E1B9E2DBC00FAC8D3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABCEF07F1B9E2DBD00FAC8D3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABCEF0801B9E2DBE00FAC8D3 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B1F0B00339B66F88C9BBBB2B6405F2DB /* MKBPrompter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKBPrompter-prefix.pch"; sourceTree = "<group>"; };
 		B4A6BEFE5EDB663136B5F738BFD2816C /* Pods-MKBPrompter_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MKBPrompter_Tests-resources.sh"; sourceTree = "<group>"; };
 		B4AC61A894436A9DB443700C1BAE35F0 /* MKBPrompter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MKBPrompter.modulemap; sourceTree = "<group>"; };
@@ -142,7 +150,9 @@
 		56B3454608F9B8746FE5423901D23FCC /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				AB5CBB7B1B820BA600442A5A /* Localizable.strings */,
 				EC5C4B19B0FE22B62CAC6D4673401911 /* Classes */,
+				ABCEF07A1B9E2DB700FAC8D3 /* Localizable.strings */,
 			);
 			path = Pod;
 			sourceTree = "<group>";
@@ -150,7 +160,6 @@
 		5DFEF7C0C76C9A5D46FA4D339FEA3F2E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB5CBB7B1B820BA600442A5A /* Localizable.strings */,
 				CE43C756F82A6D56599ABAC104BBB4BD /* Info.plist */,
 				B4AC61A894436A9DB443700C1BAE35F0 /* MKBPrompter.modulemap */,
 				16897852E3B0D4215CA493CFC87AFDA0 /* MKBPrompter.xcconfig */,
@@ -335,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F277927DF4E211911ECE3048FB9EADD7 /* MKBPrompter.bundle in Resources */,
+				ABCEF0781B9E2DB700FAC8D3 /* Localizable.strings in Resources */,
 				AB5CBB791B820BA600442A5A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +406,22 @@
 				AB5CBB811B820BEA00442A5A /* ru */,
 			);
 			name = Localizable.strings;
+			path = "../Example/Pods/Target Support Files/MKBPrompter";
+			sourceTree = "<group>";
+		};
+		ABCEF07A1B9E2DB700FAC8D3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABCEF0791B9E2DB700FAC8D3 /* en */,
+				ABCEF07B1B9E2DB800FAC8D3 /* fr */,
+				ABCEF07C1B9E2DBA00FAC8D3 /* zh-Hans */,
+				ABCEF07D1B9E2DBB00FAC8D3 /* de */,
+				ABCEF07E1B9E2DBC00FAC8D3 /* ja */,
+				ABCEF07F1B9E2DBD00FAC8D3 /* ru */,
+				ABCEF0801B9E2DBE00FAC8D3 /* ko */,
+			);
+			name = Localizable.strings;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
