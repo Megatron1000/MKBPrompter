@@ -13,8 +13,6 @@ static NSString *mkbKeyRunCount = @"runCount";
 static NSString *mkbKeyStopRatePrompting = @"stopRate";
 static NSString *mkbKeyStopOtherAppPrompting = @"stopOtherApps";
 
-"https://itunes.apple.com/us/app/id1035425291?mt=8"
-
 static NSString *reviewLinkFormat = @"https://itunes.apple.com/us/app/id%@?mt=8";
 static NSString *companyLinkFormat = @"https://itunes.apple.com/us/developer/id%@";
 
