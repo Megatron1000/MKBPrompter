@@ -13,8 +13,8 @@ static NSString *mkbKeyRunCount = @"runCount";
 static NSString *mkbKeyStopRatePrompting = @"stopRate";
 static NSString *mkbKeyStopOtherAppPrompting = @"stopOtherApps";
 
-static NSString *reviewLinkFormat = @"https://itunes.apple.com/us/app/id%@?mt=8";
-static NSString *companyLinkFormat = @"https://itunes.apple.com/us/developer/id%@";
+static NSString *reviewLinkFormat = @"https://itunes.apple.com/app/id%@?mt=8";
+static NSString *companyLinkFormat = @"https://itunes.apple.com/developer/id%@";
 
 @interface MKBPrompter ()
 
@@ -41,10 +41,7 @@ static NSString *companyLinkFormat = @"https://itunes.apple.com/us/developer/id%
 {
     if (_bundle == nil)
     {
-        NSURL *bundleURL = [[NSBundle mainBundle] URLForResource:@"MKBPrompter" withExtension:@"bundle"];
-        NSAssert(bundleURL, @"Unabled to find bundle from URL");
-        _bundle = [NSBundle bundleWithURL:bundleURL];
-        NSAssert(_bundle, @"Unable to load bundle with URL %@", bundleURL);
+        return [NSBundle bundleForClass:[MKBPrompter class]];
     }
     
     return _bundle;
