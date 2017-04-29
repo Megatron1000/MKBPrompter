@@ -8,12 +8,13 @@
 //	This class displays prompts for the user to rate your app or view your other apps at specified intervals
 
 #import "MKBPrompter.h"
+#import <StoreKit/StoreKit.h>
 
 static NSString *mkbKeyRunCount = @"runCount";
 static NSString *mkbKeyStopRatePrompting = @"stopRate";
 static NSString *mkbKeyStopOtherAppPrompting = @"stopOtherApps";
 
-static NSString *reviewLinkFormat = @"https://itunes.apple.com/app/id%@?mt=8";
+static NSString *reviewLinkFormat = @"itms-apps://itunes.apple.com/app/id%@?action=write-review";
 static NSString *companyLinkFormat = @"https://itunes.apple.com/developer/id%@";
 
 @interface MKBPrompter ()
@@ -66,23 +67,24 @@ static NSString *companyLinkFormat = @"https://itunes.apple.com/developer/id%@";
     
     if (![self.userDefaults boolForKey:mkbKeyStopRatePrompting] && (([self.userDefaults integerForKey:mkbKeyRunCount] % self.rateCurrentAppPromptInterval) == 0))
     {
-        alertController = [self rateAppAlertController];
+        if ([SKStoreReviewController class])
+        {
+            [SKStoreReviewController RequestReview];
+        }
+        else
+        {
+            [viewController presentViewController:[self rateAppAlertController] animated:YES completion:nil];
+            return YES;
+        }
     }
     
     if (![self.userDefaults boolForKey:mkbKeyStopOtherAppPrompting] && (([self.userDefaults integerForKey:mkbKeyRunCount] % self.otherAppsPromptInterval) == 0))
     {
-        alertController = [self showOtherAppsAlertController];
-    }
-    
-    if (alertController)
-    {
-        [viewController presentViewController:alertController animated:YES completion:nil];
+        [viewController presentViewController:[self showOtherAppsAlertController] animated:YES completion:nil];
         return YES;
     }
-    else
-    {
-        return NO;
-    }
+    
+    return NO;
 }
 
 - (UIAlertController*)rateAppAlertController
