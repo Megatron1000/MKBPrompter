@@ -60,22 +60,25 @@ static NSString *companyLinkFormat = @"https://itunes.apple.com/developer/id%@";
 
 - (BOOL)showPrompterIfScheduledInViewController:(UIViewController*)viewController
 {
-    UIAlertController *alertController;
-    
     [self.userDefaults setInteger:(1 + [self.userDefaults integerForKey:mkbKeyRunCount]) forKey:mkbKeyRunCount];
     NSLog(@"MKBPrompter has been run %ld times", (long)[self.userDefaults integerForKey:mkbKeyRunCount]);
     
     if (![self.userDefaults boolForKey:mkbKeyStopRatePrompting] && (([self.userDefaults integerForKey:mkbKeyRunCount] % self.rateCurrentAppPromptInterval) == 0))
     {
-        if ([SKStoreReviewController class])
+#ifdef TARGET_OS_IOS
+        if (NSClassFromString(@"SKStoreReviewController"))
         {
-            [SKStoreReviewController RequestReview];
+            [SKStoreReviewController requestReview];
         }
         else
         {
             [viewController presentViewController:[self rateAppAlertController] animated:YES completion:nil];
             return YES;
         }
+#else
+        [viewController presentViewController:[self rateAppAlertController] animated:YES completion:nil];
+        return YES;
+#endif
     }
     
     if (![self.userDefaults boolForKey:mkbKeyStopOtherAppPrompting] && (([self.userDefaults integerForKey:mkbKeyRunCount] % self.otherAppsPromptInterval) == 0))
