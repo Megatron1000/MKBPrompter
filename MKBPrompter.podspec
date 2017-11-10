@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "MKBPrompter"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "Prompts the user to rate, review and view your other apps at specified intervals"
 
   s.homepage         = "https://github.com/Megatron1000/MKBPrompter"
@@ -17,8 +17,9 @@ Pod::Spec.new do |s|
   s.author           = { "Mark Bridges" => "mark@bridgetech.io" }
   s.source           = { :git => "https://github.com/Megatron1000/MKBPrompter.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/markbridgesapps'
+  s.ios.deployment_target = '8.0'
+  s.tvos.deployment_target = '9.0'
 
-  s.platforms = { :ios => "8.0" }
 # s.source_files = 'MKBPrompter/MKBPrompter.{h,m}'
   s.requires_arc = true
 
