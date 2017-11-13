@@ -65,7 +65,7 @@ static NSString *companyLinkFormat = @"https://itunes.apple.com/developer/id%@";
     
     if (![self.userDefaults boolForKey:mkbKeyStopRatePrompting] && (([self.userDefaults integerForKey:mkbKeyRunCount] % self.rateCurrentAppPromptInterval) == 0))
     {
-#if !TARGET_OS_TV
+#if TARGET_OS_PHONE
         if (NSClassFromString(@"SKStoreReviewController"))
         {
             [SKStoreReviewController requestReview];
